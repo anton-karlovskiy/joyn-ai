@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2{fill:currentColor}
+        </style>
+    </defs>
+    <g id="Group_1688" transform="translate(-618 -238)">
+        <rect id="Rectangle_174" width="24" height="24" fill="none" rx="12" transform="translate(618 238)"/>
+        <g id="dotmenuclicked" transform="translate(623 248)">
+            <circle id="Ellipse_30" cx="1.65" cy="1.65" r="1.65" class="cls-2"/>
+            <circle id="Ellipse_31" cx="1.65" cy="1.65" r="1.65" class="cls-2" transform="translate(5)"/>
+            <circle id="Ellipse_32" cx="1.65" cy="1.65" r="1.65" class="cls-2" transform="translate(10)"/>
+        </g>
+    </g>
+</svg>

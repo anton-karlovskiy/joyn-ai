@@ -10,6 +10,7 @@ import Collapse from '@material-ui/core/Collapse';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import { useLocation, useHistory } from 'react-router-dom';
 
+import ButtonLink from 'components/UI/ButtonLink';
 import { ReactComponent as AnalyticsIcon } from 'assets/icons/svgs/analytics.svg';
 import { ReactComponent as AllocationIcon } from 'assets/icons/svgs/allocation.svg';
 import { ReactComponent as RouteIcon } from 'assets/icons/svgs/route.svg';
@@ -19,7 +20,6 @@ import { ReactComponent as SettingsIcon } from 'assets/icons/svgs/settings.svg';
 import { ReactComponent as MinusIcon } from 'assets/icons/svgs/minus.svg';
 import { ReactComponent as ChevronRight } from 'assets/icons/svgs/chevron-right.svg';
 import { ReactComponent as DropdownExpand } from 'assets/icons/svgs/dropdown-expand.svg';
-import ButtonLink from 'components/UI/ButtonLink';
 import { PAGES } from 'utils/constants/links';
 
 const LIST_ITEM_HEIGHT = 62;
@@ -132,7 +132,7 @@ const DrawerMenuList = ({
     for (let index = 0; index < menuItems.length; index++) {
       for (let subIndex = 0; subIndex < menuItems[index].subMenuItems.length; subIndex++) {
         const link = menuItems[index].subMenuItems[subIndex].link;
-        if (link.includes(pathname)) {
+        if (pathname.includes(link)) {
           found = true;
           if (selectedIndex !== index) {
             setSelectedIndex(index);
@@ -224,22 +224,21 @@ const DrawerMenuList = ({
                   const isSelectedSubMenuItem = selectedSubIndex === subIndex;
 
                   return (
-                    <ButtonLink
+                    <ListItem
+                      button
+                      key={`${menuItem.title}-${subMenuItem.title}`}
                       to={subMenuItem.link}
-                      key={`${menuItem.title}-${subMenuItem.title}`}>
-                      <ListItem
-                        button
-                        selected={isSelectedMenuItem && isSelectedSubMenuItem}
-                        classes={{
-                          root: clsx(classes.nested, classes.itemHeight),
-                          selected: classes.selectedSubListItem
-                        }}>
-                        <ListItemIcon className={classes.itemIcon}>
-                          <MinusIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={subMenuItem.title} />
-                      </ListItem>
-                    </ButtonLink>
+                      component={ButtonLink}
+                      selected={isSelectedMenuItem && isSelectedSubMenuItem}
+                      classes={{
+                        root: clsx(classes.nested, classes.itemHeight),
+                        selected: classes.selectedSubListItem
+                      }}>
+                      <ListItemIcon className={classes.itemIcon}>
+                        <MinusIcon />
+                      </ListItemIcon>
+                      <ListItemText primary={subMenuItem.title} />
+                    </ListItem>
                   );
                 })}
               </List>

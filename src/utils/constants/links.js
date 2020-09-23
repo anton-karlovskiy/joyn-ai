@@ -10,7 +10,12 @@ const PAGES = Object.freeze({
   // Components
   ASSETS: '/components/assets',
   READING_VIEWS: '/components/reading-views',
-  PICKLISTS: '/components/picklists'
+  PICKLISTS: '/components/picklists',
+  PICKLISTS_GENERICS: '/components/picklists/generics',
+  PICKLISTS_TRANSPORTERS: '/components/picklists/transporters',
+  PICKLISTS_PURCHASERS: '/components/picklists/purchasers',
+  PICKLISTS_TANK_STRAPPING: '/components/picklists/tank-strapping',
+  PICKLISTS_DYNAMIC_LOOKUP: '/components/picklists/dynamic-lookup'
 });
 
 export {

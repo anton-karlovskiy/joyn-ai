@@ -1,5 +1,6 @@
 
 import React from 'react';
+import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -30,46 +31,54 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-/**
- * @param {*} id
- * @param {*} index
- * @return {*} description
- */
-function a11yProps(id, index) {
-  return {
-    id: `joyn-tab-${id}-${index}`,
-    'aria-controls': `joyn-tabpanel-${index}`
-  };
-}
+const JoynTab = ({
+  classes: propClasses = {},
+  ...rest
+}) => {
+  const {
+    root: tabRootClass,
+    selected: tabSelectedClass,
+    ...restPropClasses
+  } = propClasses;
+  const classes = useStyles();
+
+  return (
+    <Tab
+      classes={{
+        root: clsx(classes.tab, tabRootClass),
+        selected: clsx(classes.selected, tabSelectedClass),
+        ...restPropClasses
+      }}
+      {...rest} />
+  );
+};
 
 const JoynTabs = React.forwardRef(({
-  id,
-  options,
+  classes: propClasses = {},
   ...rest
 }, ref) => {
+  const {
+    root: tabsRootClass,
+    indicator: tabsIndicatorClass,
+    ...restPropClasses
+  } = propClasses;
   const classes = useStyles();
 
   return (
     <Tabs
       ref={ref}
       classes={{
-        root: classes.root,
-        indicator: classes.indicator
+        root: clsx(classes.root, tabsRootClass),
+        indicator: clsx(classes.indicator, tabsIndicatorClass),
+        ...restPropClasses
       }}
       aria-label='joyn tabs'
-      {...rest}>
-      {options.map((tabItem, index) => (
-        <Tab
-          key={tabItem.label}
-          classes={{
-            root: classes.tab,
-            selected: classes.selected
-          }}
-          label={tabItem.label}
-          {...a11yProps(id, index)} />
-      ))}
-    </Tabs>
+      {...rest} />
   );
 });
+
+export {
+  JoynTab
+};
 
 export default JoynTabs;

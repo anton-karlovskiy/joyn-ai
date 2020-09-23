@@ -1,9 +1,30 @@
 
 import React from 'react';
 
-import JoynTabs from 'components/JoynTabs';
+import JoynTabs, { JoynTab } from 'components/JoynTabs';
 
-const JoynTabsWithController = props => {
+const options = [
+  {
+    label: 'Generic Picklists'
+  },
+  {
+    label: 'Transporters'
+  },
+  {
+    label: 'Purchasers'
+  },
+  {
+    label: 'Tank Strapping'
+  },
+  {
+    label: 'Dynamic Lookup'
+  }
+];
+
+const JoynTabsWithController = ({
+  id,
+  ...rest
+}) => {
   const [selectedTabIndex, setSelectedTabIndex] = React.useState(0);
 
   const handleTabChange = (event, newIndex) => {
@@ -14,7 +35,15 @@ const JoynTabsWithController = props => {
     <JoynTabs
       value={selectedTabIndex}
       onChange={handleTabChange}
-      {...props} />
+      {...rest}>
+      {options.map((option, index) => (
+        <JoynTab
+          key={option.label}
+          id={`joyn-tab-${id}-${index}`}
+          aria-controls={`joyn-tabpanel-${index}`}
+          label={option.label} />
+      ))}
+    </JoynTabs>
   );
 };
 
@@ -22,24 +51,7 @@ const Template = args => <JoynTabsWithController {...args} />;
 
 const GenericPicklistsTabs = Template.bind({});
 GenericPicklistsTabs.args = {
-  id: 'picklist',
-  options: [
-    {
-      label: 'Generic Picklists'
-    },
-    {
-      label: 'Transporters'
-    },
-    {
-      label: 'Purchasers'
-    },
-    {
-      label: 'Tank Strapping'
-    },
-    {
-      label: 'Dynamic Lookup'
-    }
-  ]
+  id: 'picklist'
 };
 
 export default {

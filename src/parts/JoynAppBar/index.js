@@ -47,7 +47,7 @@ const JoynAppBar = ({
   isDrawerOpen,
   handleDrawerOpen,
   // TODO: hardcoded
-  title = 'Manage Allocation Networks',
+  title = 'Manage Picklists',
   actions
 }) => {
   const classes = useStyles();

@@ -3,11 +3,32 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 import SectionToolbar from 'parts/SectionToolbar';
-import JoynTabs from 'components/JoynTabs';
+import JoynTabs, { JoynTab } from 'components/JoynTabs';
 import * as JoynTabsStories from 'components/JoynTabs/JoynTabs.stories';
 
 // TODO: duplicated at src\components\JoynTabs\JoynTabs.stories.js
-const JoynTabsWithController = props => {
+const options = [
+  {
+    label: 'Generic Picklists'
+  },
+  {
+    label: 'Transporters'
+  },
+  {
+    label: 'Purchasers'
+  },
+  {
+    label: 'Tank Strapping'
+  },
+  {
+    label: 'Dynamic Lookup'
+  }
+];
+
+const JoynTabsWithController = ({
+  id,
+  ...rest
+}) => {
   const [selectedTabIndex, setSelectedTabIndex] = React.useState(0);
 
   const handleTabChange = (event, newIndex) => {
@@ -18,7 +39,15 @@ const JoynTabsWithController = props => {
     <JoynTabs
       value={selectedTabIndex}
       onChange={handleTabChange}
-      {...props} />
+      {...rest}>
+      {options.map((option, index) => (
+        <JoynTab
+          key={option.label}
+          id={`joyn-tab-${id}-${index}`}
+          aria-controls={`joyn-tabpanel-${index}`}
+          label={option.label} />
+      ))}
+    </JoynTabs>
   );
 };
 

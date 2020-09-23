@@ -72,8 +72,8 @@ const JoynInputBase = React.forwardRef(({
 }, ref) => {
   const classes = useStyles();
   const {
-    root: inputRootPropClasses,
-    input: inputInputClasses,
+    root: inputRootPropClass,
+    input: inputInputClass,
     ...restPropClasses
   } = propClasses;
 
@@ -100,11 +100,11 @@ const JoynInputBase = React.forwardRef(({
           classes.typeScale,
           { [classes.inputRootReadOnly]: readOnly },
           { [classes.inputRootLabelSpace]: hasLabel },
-          inputRootPropClasses
+          inputRootPropClass
         ),
         input: clsx(
           classes.inputInput,
-          inputInputClasses
+          inputInputClass
         ),
         error: classes.inputRootError,
         ...restPropClasses

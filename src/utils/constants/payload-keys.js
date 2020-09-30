@@ -1,5 +1,5 @@
 
-const PAYLOAD_KEYS = {
+const PAYLOAD_KEYS = Object.freeze({
   // Generic
   ID: 'id',
   NAME: 'n',
@@ -14,7 +14,16 @@ const PAYLOAD_KEYS = {
   DISPLAY_NAME: 'dn',
   CUSTOMIZABLE: 'icble',
   PARENT_PICKLIST_OPTIONS_SET_ID: 'pplistsid',
-  PARENT_PICKLIST_OPTIONS_SET_NAME: 'pplistsidname'
-};
+  PARENT_PICKLIST_OPTIONS_SET_NAME: 'pplistsidname',
+
+  PICKLIST_OPTIONS_SET_ID: 'sid',
+  PARENT_PICKLIST_OPTION_ID: 'pplistid',
+  PARENT_PICKLIST_ID_NAME: 'pplistidname',
+  VALUE: 'v',
+  CODE: 'code',
+  DESCRIPTION: 'd',
+  IS_ACTIVE: 'IsActive',
+  SORT_ORDER: 'so'
+});
 
 export default PAYLOAD_KEYS;

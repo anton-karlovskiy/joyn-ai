@@ -14,8 +14,8 @@ import { ReactComponent as DeleteIcon } from 'assets/icons/svgs/delete.svg';
 import { ReactComponent as DisconnectIcon } from 'assets/icons/svgs/disconnect.svg';
 import { ReactComponent as DownIcon } from 'assets/icons/svgs/down.svg';
 import { ReactComponent as DownloadIcon } from 'assets/icons/svgs/download.svg';
-import { ReactComponent as DropdownCollapseIcon } from 'assets/icons/svgs/dropdown-collapse.svg';
-import { ReactComponent as DropdownExpandIcon } from 'assets/icons/svgs/dropdown-expand.svg';
+import { ReactComponent as ExpandLess } from 'assets/icons/svgs/expand-less.svg';
+import { ReactComponent as ExpandMore } from 'assets/icons/svgs/expand-more.svg';
 import { ReactComponent as DuplicateIcon } from 'assets/icons/svgs/duplicate.svg';
 import { ReactComponent as EditIcon } from 'assets/icons/svgs/edit.svg';
 import { ReactComponent as EquipmentIcon } from 'assets/icons/svgs/equipment.svg';
@@ -116,10 +116,10 @@ const Template = args => (
     <DownloadIcon
       {...args}
       title='Download' />
-    <DropdownCollapseIcon
+    <ExpandLess
       {...args}
       title='Dropdown Collapse' />
-    <DropdownExpandIcon
+    <ExpandMore
       {...args}
       title='Dropdown Expand' />
     <DuplicateIcon

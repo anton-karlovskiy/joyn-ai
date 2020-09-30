@@ -3,7 +3,7 @@ import React from 'react';
 import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 
-import SectionToolbar from 'parts/SectionToolbar';
+import TopToolbar from 'parts/TopToolbar';
 import JoynTabs, { JoynTab } from 'components/JoynTabs';
 import ButtonLink from 'components/UI/ButtonLink';
 import LazyLoadingErrorBoundary from 'utils/hocs/LazyLoadingErrorBoundary';
@@ -21,12 +21,12 @@ const Purchasers = React.lazy(() =>
   import(/* webpackChunkName: 'purchasers' */ 'containers/Purchasers')
 );
 
-const TankStrapping = React.lazy(() =>
-  import(/* webpackChunkName: 'tank-strapping' */ 'containers/TankStrapping')
+const TankStrappings = React.lazy(() =>
+  import(/* webpackChunkName: 'tank-strappings' */ 'containers/TankStrappings')
 );
 
-const DynamicLookup = React.lazy(() =>
-  import(/* webpackChunkName: 'dynamic-lookup' */ 'containers/DynamicLookup')
+const DynamicLookups = React.lazy(() =>
+  import(/* webpackChunkName: 'dynamic-lookups' */ 'containers/DynamicLookups')
 );
 
 const options = [
@@ -43,12 +43,12 @@ const options = [
     link: PAGES.PICKLISTS_PURCHASERS
   },
   {
-    label: 'Tank Strapping',
-    link: PAGES.PICKLISTS_TANK_STRAPPING
+    label: 'Tank Strappings',
+    link: PAGES.PICKLISTS_TANK_STRAPPINGS
   },
   {
-    label: 'Dynamic Lookup',
-    link: PAGES.PICKLISTS_DYNAMIC_LOOKUP
+    label: 'Dynamic Lookups',
+    link: PAGES.PICKLISTS_DYNAMIC_LOOKUPS
   }
 ];
 
@@ -69,10 +69,10 @@ const Picklists = () => {
 
   return (
     <>
-      <SectionToolbar
+      <TopToolbar
         leftPart={(
           <Typography variant='h6'>
-            Generic Picklists
+            {options[selectedTabIndex].label}
           </Typography>
         )}
         rightPart={(
@@ -98,10 +98,6 @@ const Picklists = () => {
       <React.Suspense fallback='Loading...'>
         <LazyLoadingErrorBoundary>
           <Switch>
-            <Redirect
-              exact
-              from={PAGES.PICKLISTS}
-              to={PAGES.PICKLISTS_GENERICS} />
             <Route
               path={PAGES.PICKLISTS_GENERICS}
               component={GenericPicklists} />
@@ -112,11 +108,15 @@ const Picklists = () => {
               path={PAGES.PICKLISTS_PURCHASERS}
               component={Purchasers} />
             <Route
-              path={PAGES.PICKLISTS_TANK_STRAPPING}
-              component={TankStrapping} />
+              path={PAGES.PICKLISTS_TANK_STRAPPINGS}
+              component={TankStrappings} />
             <Route
-              path={PAGES.PICKLISTS_DYNAMIC_LOOKUP}
-              component={DynamicLookup} />
+              path={PAGES.PICKLISTS_DYNAMIC_LOOKUPS}
+              component={DynamicLookups} />
+            <Redirect
+              exact
+              from={PAGES.PICKLISTS}
+              to={PAGES.PICKLISTS_GENERICS} />
           </Switch>
         </LazyLoadingErrorBoundary>
       </React.Suspense>

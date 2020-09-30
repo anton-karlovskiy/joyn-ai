@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   secondaryButton: {
-    color: theme.palette.action.active,
+    color: theme.palette.primary.main,
     '&:not(:disabled)': {
       backgroundColor: theme.palette.primary.lighter,
       border: `1px solid ${theme.palette.primary.main}`
@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   tertiaryButton: {
-    color: theme.palette.action.active,
+    color: theme.palette.primary.main,
     '&:hover': {
       backgroundColor: theme.palette.primary.lighter
     },
@@ -49,7 +49,6 @@ const JoynButton = React.forwardRef(({
     <JoynButtonBase
       ref={ref}
       className={clsx(
-        classes.root,
         { [classes.primaryButton]: type === BUTTON_TYPES.PRIMARY },
         { [classes.secondaryButton]: type === BUTTON_TYPES.SECONDARY },
         { [classes.tertiaryButton]: type === BUTTON_TYPES.TERTIARY },

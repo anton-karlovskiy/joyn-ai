@@ -20,16 +20,17 @@ const Template = args => {
 
   return (
     <JoynAsyncSearchBar
-      {...args}
       value={asyncSearchTerm}
-      onChange={handleAsyncSearchTermChange} />
+      onChange={handleAsyncSearchTermChange}
+      {...args} />
   );
 };
 
 const SearchWithSuggestions = Template.bind({});
 SearchWithSuggestions.args = {
   id: 'joyn-async-search-bar',
-  placeholder: 'Asynchronous',
+  label: 'Parent Option Group',
+  placeholder: 'Choose',
   getOptions: getAsyncOptions,
   getOptionLabel: option => option.name,
   getOptionSelected: (option, value) => option.name === value.name

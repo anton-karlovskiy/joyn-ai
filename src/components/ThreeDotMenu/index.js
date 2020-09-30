@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
 
 import JoynMenu from 'components/UI/JoynMenu';
 import MenuDotIconButton from 'components/JoynIconButtons/MenuDotIconButton';
@@ -51,7 +51,7 @@ const ThreeDotMenu = props => {
           horizontal: 'right'
         }}
         transformOrigin={{
-          vertical: 'top',
+          vertical: -5,
           horizontal: 'right'
         }}
         {...props} />

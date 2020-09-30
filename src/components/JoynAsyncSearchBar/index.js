@@ -1,14 +1,14 @@
 
 import React from 'react';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-// import CircularProgress from '@material-ui/core/CircularProgress';
 
-import JoynInputBase from 'components/UI/JoynInputBase';
+import JoynInputField from 'components/JoynInputField';
 
 const JoynAsyncSearchBar = ({
   placeholder,
-  getOptions,
+  getOptions = () => [],
   style,
+  label,
   ...rest
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -53,10 +53,9 @@ const JoynAsyncSearchBar = ({
   return (
     <Autocomplete
       style={{
-        ...style,
-        display: 'inline-block'
+        display: 'inline-block',
+        ...style
       }}
-      {...rest}
       open={isOpen}
       onOpen={handleOpen}
       onClose={handleClose}
@@ -71,14 +70,18 @@ const JoynAsyncSearchBar = ({
             ...restInputProps
           }
         } = params;
-
         return (
-          <JoynInputBase
+          <JoynInputField
+            label={label}
             placeholder={placeholder}
             startAdornment={startAdornment}
             endAdornment={(
               <>
-                {/* TODO: styling is broken with the loading spinner */}
+                {/**
+                 * TODO:
+                 * Styling is broken with a loading spinner so blocked.
+                 * endAdornment should be a magnifier icon.
+                 */}
                 {/* {isLoading ? (
                   <CircularProgress
                     color='inherit'
@@ -92,7 +95,8 @@ const JoynAsyncSearchBar = ({
               ...restInputProps
             }} />
         );
-      }} />
+      }}
+      {...rest} />
   );
 };
 

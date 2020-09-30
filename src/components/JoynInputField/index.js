@@ -25,18 +25,19 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const JoynInputField = ({
+const JoynInputField = React.forwardRef(({
   id,
   label,
   required,
   error,
   helperText,
   ...rest
-}) => {
+}, ref) => {
   const classes = useStyles();
 
   return (
     <FormControl
+      ref={ref}
       required={required}
       error={error}>
       {label && (
@@ -55,9 +56,9 @@ const JoynInputField = ({
         id={id}
         hasLabel={!!label}
         {...rest} />
-      <FormHelperText>{helperText}</FormHelperText>
+      {helperText && <FormHelperText>{helperText}</FormHelperText>}
     </FormControl>
   );
-};
+});
 
 export default JoynInputField;

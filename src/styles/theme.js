@@ -193,7 +193,8 @@ const theme = createMuiTheme({
   custom: {
     palette: {
       grey: {
-        lightest: '#f6f6f6'
+        lightest: '#f6f6f6',
+        main: '#707070'
       }
     },
     shadows: [
@@ -203,7 +204,8 @@ const theme = createMuiTheme({
       appBarHeight: 82,
       // TODO: different from the design (205)
       drawerWidth: 240,
-      sectionToolbarHeight: 62
+      topToolbarHeight: 62,
+      bottomToolbarHeight: 82
     }
   }
 });

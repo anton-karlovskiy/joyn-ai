@@ -35,7 +35,19 @@ const ReadingViews = React.lazy(() =>
 );
 
 const Picklists = React.lazy(() =>
-  import(/* webpackChunkName: 'pick-lists' */ 'pages/Picklists')
+  import(/* webpackChunkName: 'picklists' */ 'pages/Picklists')
+);
+
+const AddOrEditPicklist = React.lazy(() =>
+  import(/* webpackChunkName: 'add-or-edit-picklist' */ 'pages/Picklists/generics/AddOrEditPicklist')
+);
+
+const ViewPicklist = React.lazy(() =>
+  import(/* webpackChunkName: 'view-picklist' */ 'pages/Picklists/generics/ViewPicklist')
+);
+
+const AddOrEditPicklistOption = React.lazy(() =>
+  import(/* webpackChunkName: 'add-or-edit-picklist-option' */ 'pages/Picklists/generics/AddOrEditPicklistOption')
 );
 
 const App = () => {
@@ -68,6 +80,23 @@ const App = () => {
               <Route
                 path={PAGES.READING_VIEWS}
                 component={ReadingViews} />
+
+              {/* Picklists */}
+              <Route
+                path={PAGES.PICKLISTS_GENERICS_ADD}
+                component={AddOrEditPicklist} />
+              <Route
+                path={PAGES.PICKLISTS_GENERICS_EDIT}
+                component={AddOrEditPicklist} />
+              <Route
+                path={PAGES.PICKLISTS_GENERICS_VIEW}
+                component={ViewPicklist} />
+              <Route
+                path={PAGES.PICKLISTS_GENERICS_ADD_OPTION}
+                component={AddOrEditPicklistOption} />
+              <Route
+                path={PAGES.PICKLISTS_GENERICS_EDIT_OPTION}
+                component={AddOrEditPicklistOption} />
               <Route
                 path={PAGES.PICKLISTS}
                 component={Picklists} />

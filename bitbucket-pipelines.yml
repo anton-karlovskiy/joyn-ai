@@ -1,0 +1,26 @@
+image: dr0311/awscli-python3.7:latest
+
+pipelines:
+
+  branches:
+    dev:
+      - step:
+          name: Dev CD
+          deployment: dev
+          script:
+            - aws configure set region $AWS_REGION --profile $TEST_PROFILE
+            - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID --profile $TEST_PROFILE
+            - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY --profile $TEST_PROFILE
+            - export AWS_PROFILE=$TEST_PROFILE
+            - ./build.sh devai
+
+    master:
+      - step:
+          name: Stage CD
+          deployment: stage
+          script:
+            - aws configure set region $AWS_REGION --profile $TEST_PROFILE
+            - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID --profile $TEST_PROFILE
+            - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY --profile $TEST_PROFILE
+            - export AWS_PROFILE=$TEST_PROFILE
+            - ./build.sh stageai

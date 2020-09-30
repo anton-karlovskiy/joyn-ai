@@ -19,7 +19,7 @@ import { ReactComponent as UserIcon } from 'assets/icons/svgs/user.svg';
 import { ReactComponent as SettingsIcon } from 'assets/icons/svgs/settings.svg';
 import { ReactComponent as MinusIcon } from 'assets/icons/svgs/minus.svg';
 import { ReactComponent as ChevronRight } from 'assets/icons/svgs/chevron-right.svg';
-import { ReactComponent as DropdownExpand } from 'assets/icons/svgs/dropdown-expand.svg';
+import { ReactComponent as ExpandMore } from 'assets/icons/svgs/expand-more.svg';
 import { PAGES } from 'utils/constants/links';
 
 const LIST_ITEM_HEIGHT = 62;
@@ -205,7 +205,7 @@ const DrawerMenuList = ({
               {isOpen && (
                 <ListItemSecondaryAction className={clsx({ [classes.selectedListItemColor]: isSelectedMenuItem })}>
                   {isOpenedMenuItem ? (
-                    <DropdownExpand />
+                    <ExpandMore />
                   ) : (
                     <ChevronRight />
                   )}

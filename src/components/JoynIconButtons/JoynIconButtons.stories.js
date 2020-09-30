@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import DownloadIconButton from 'components/JoynIconButtons/DownloadIconButton';
 import MenuDotIconButton from 'components/JoynIconButtons/MenuDotIconButton';
+import CrossIconButton from 'components/JoynIconButtons/CrossIconButton';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,6 +18,7 @@ const Template = args => (
   <>
     <DownloadIconButton {...args} />
     <MenuDotIconButton {...args} />
+    <CrossIconButton {...args} />
   </>
 );
 
@@ -30,6 +32,13 @@ const defaultArgs = {
 const DefaultJoynIconButtonsGrid = Template.bind({});
 DefaultJoynIconButtonsGrid.args = {
   ...defaultArgs,
+  color: 'primary'
+};
+
+const SmallSizeJoynIconButtonsGrid = Template.bind({});
+SmallSizeJoynIconButtonsGrid.args = {
+  ...defaultArgs,
+  size: 'small',
   color: 'primary'
 };
 
@@ -75,6 +84,7 @@ export default {
 
 export {
   DefaultJoynIconButtonsGrid,
+  SmallSizeJoynIconButtonsGrid,
   DisabledJoynIconButtonsGrid,
   LoadingJoynIconButtonsGrid
 };

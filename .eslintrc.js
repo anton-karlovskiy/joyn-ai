@@ -65,13 +65,13 @@ module.exports = {
     // 'semi': ['error', 'always'],
     // 'comma-spacing': ['error', { 'before': false, 'after': true }],
     'object-curly-spacing': ['error', 'always'],
+    'space-in-parens': ['error', 'never'],
     // 'no-trailing-spaces': ['error', { 'skipBlankLines': false, 'ignoreComments': false }],
     // 'no-multi-spaces': 'error',
     // 'space-after-keywords': ['error', 'always'],
     // 'keyword-spacing': ['error', { before: true, after: true }],
     // 'block-spacing': ['error', 'never'],
     // 'key-spacing': ['error', { beforeColon: false, afterColon: true }],
-    // 'space-in-parens': ['error', 'never'],
     // 'capitalized-comments': ['warn', 'always', {
     //   'ignorePattern': 'pragma|ignored',
     //   'ignoreInlineComments': true

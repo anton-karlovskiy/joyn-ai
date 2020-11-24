@@ -54,12 +54,30 @@ module.exports = {
         named: 'never'
       }
     ],
-    'no-negated-condition': 'warn',
+    'no-negated-condition': 'error',
     'spaced-comment': ['error', 'always',
       {
         exceptions: ['/']
       }
     ],
+    'no-dupe-keys': 'error',
+    'eqeqeq': 'error',
+    'arrow-spacing': ['error', {
+      before: true,
+      after: true
+    }],
+    'no-multiple-empty-lines': ['error', {
+      max: 1,
+      maxEOF: 1,
+      maxBOF: 1
+    }],
+    'space-infix-ops': ['error', {
+      'int32Hint': false
+    }],
+    'space-unary-ops': ['error', {
+      words: true,
+      nonwords: false
+    }],
     // MEMO: They are set by extends
     // 'quotes': ['error', 'single'],
     // 'semi': ['error', 'always'],

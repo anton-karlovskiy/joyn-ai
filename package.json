@@ -28,19 +28,17 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "netlify-deploy-storybook": "yarn build-storybook && netlify deploy --prod --dir=storybook-static",
-    "lint": "eslint src/**/*.+(js)",
-    "lint-fix": "eslint --fix src/**/*.+(js)",
+    "lint": "eslint --ext .js,.jsx --ignore-path .eslintignore .",
+    "lint-fix": "eslint --fix --ext .js,.jsx --ignore-path .eslintignore .",
     "format": "prettier --write src/**/*.+(js)",
     "analyze-webpack-bundle": "node scripts/analyze.js"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix --ext .js,.jsx --ignore-path .eslintignore ."
     ],
     "*.+(json|yml|yaml|css|md)": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "husky": {

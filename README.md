@@ -3,7 +3,7 @@
 [![React](https://img.shields.io/badge/React-16.13.1-blue.svg)](https://reactjs.org/)
 [![Material-UI](https://img.shields.io/badge/Material--UI-5.0.0-alpha.10-blue.svg)](https://material-ui.com/)
 [![AG-Grid](https://img.shields.io/badge/AG--Grid-24.0.0-green.svg)](https://www.ag-grid.com/)
-[![Storybook](https://img.shields.io/badge/Storybook-6.0.21-FF4785.svg)](https://joyn-ai-storybook.netlify.app/)
+[![Storybook](https://img.shields.io/badge/Storybook-6.0.21-FF4785.svg)](https://joyn-alloc-fdg-ui-storybook.netlify.app)
 [![License](https://img.shields.io/badge/License-Private-red.svg)]()
 
 A comprehensive React-based web application for fuel distribution allocation management, featuring advanced data grid capabilities, picklist management, and allocation configuration tools.
@@ -98,7 +98,7 @@ A comprehensive React-based web application for fuel distribution allocation man
 - `yarn format` - Format code with Prettier
 
 ### Storybook
-- **Live Demo**: [View Component Library](https://joyn-ai-storybook.netlify.app/) - Interactive component documentation
+- **Live Demo**: [View Component Library](https://joyn-alloc-fdg-ui-storybook.netlify.app) - Interactive component documentation
 - `yarn storybook` - Start Storybook development server
 - `yarn build-storybook` - Build Storybook for production
 
@@ -229,7 +229,7 @@ This README is optimized for search engines with:
 ## 📞 Support
 
 For technical support and questions:
-- **Component Documentation**: [View Storybook](https://joyn-ai-storybook.netlify.app/) - Interactive component library and documentation
+- **Component Documentation**: [View Storybook](https://joyn-alloc-fdg-ui-storybook.netlify.app) - Interactive component library and documentation
 - Check existing issues in the repository
 - Contact the development team
 

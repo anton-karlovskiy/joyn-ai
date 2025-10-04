@@ -8,6 +8,7 @@ import Layout from 'parts/Layout';
 import theme from 'styles/theme';
 import { PAGES } from 'utils/constants/links';
 import LazyLoadingErrorBoundary from 'utils/hocs/LazyLoadingErrorBoundary';
+import './App.scss';
 
 const ManageNetworks = React.lazy(() =>
   import(/* webpackChunkName: 'manage-networks' */ 'pages/ManageNetworks')
